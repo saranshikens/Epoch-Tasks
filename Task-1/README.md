@@ -94,9 +94,9 @@ Average Accuracy: 0.7462
 The model performs better than the one in 1 iteration in almost all fields, except emotion-7. Still, the model's performance remains poor in emotion 4.
 
 
-Discussion and Insights
+\`\`\`<pre>Discussion and Insights
 Only 100 pixels were significant out of the 2304 pixels. This means that to determine the emotion of a face, we need not analyze the entire face. Analyzing a certain small portion (my guess - eyes, eyebrows and lips) is enough to deduce emotions.
 The strategy worked great for emotions 1,3 and 5, while it was quite poor for emotion-4. After emotion-4, it is the emotion of 'contempt' that performs poor. This could be due to the complexity of this emotion. Contempt is the emotion of feeling superior to someone, its signs are not as pronounced as other emotions.
 The main challenge was to account for the disbalance in the labelled data, that I tackled using the previously mentioned approaches.
 Since my approach relies on iterations, main limitation is computation power and time. As we keep on increasing the iterations are results will keep on getting better. Since PCA retains directions of maximum variance, if an emotion has low variance, it could get under represented in the principal components.
-The performance of this model on emotion-4 is worrisome. My next steps will be to deeply analysize the distribution of the data for emotion-4. Images belonging to emotion-4 can be augmented so that the model captures this emotion more clearly. Increasing the number of iterations can be also be tried.
+The performance of this model on emotion-4 is worrisome. My next steps will be to deeply analysize the distribution of the data for emotion-4. Images belonging to emotion-4 can be augmented so that the model captures this emotion more clearly. Increasing the number of iterations can be also be tried.\`\`\`</pre>
