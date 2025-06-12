@@ -44,7 +44,7 @@ Approach-1 :
    macro avg       0.66      0.65      0.66        99
 weighted avg       0.77      0.76      0.76        99\`\`\`</pre>
 
-![Confusion Matrix of Approach-1](Task-1/Images/Approach-1.png)
+![Confusion Matrix of Approach-1](Images/Approach-1.png)
 
 The model performs well for emotion-1,3, and 5, and performs very poorly for emotion-4.
 
@@ -67,7 +67,7 @@ Approach-2 (One Iteration):
    macro avg       0.62      0.63      0.62       113
 weighted avg       0.72      0.72      0.71       113\`\`\`</pre>
 
-![Confusion Matrix of Approach-2 with One Iteration](Task-1/Images/Approach-2_One_Itr.png)
+![Confusion Matrix of Approach-2 with One Iteration](Images/Approach-2_One_Itr.png)
 
 The model improves its recall and f-1 score in emotion-7, and continues to show the same trends as Approach-1.
 Including emotion-6, improved the results for emotion-7, this could mean that both emotions have some correlation.
@@ -89,7 +89,7 @@ Approach-2 (100 Iterations)
            7       0.40      0.55      0.46         5\`\`\`</pre>
 
 Average Accuracy: 0.7462<br>
-![Confusion Matrix of Approach-2 with One Iteration](Task-1/Images/Approach-2_100_Itr.png)
+![Confusion Matrix of Approach-2 with One Iteration](Images/Approach-2_100_Itr.png)
 
 The model performs better than the one in 1 iteration in almost all fields, except emotion-7. Still, the model's performance remains poor in emotion 4.
 
