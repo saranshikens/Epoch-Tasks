@@ -29,7 +29,7 @@ To choose the optimal svm kernel, and hyperparameters, I stored them in a grid (
 Results :
 Approach-1 :
 
-Classification Report:
+<pre>\`\`\`Classification Report:
               precision    recall  f1-score   support
 
            0       0.53      0.57      0.55        14
@@ -42,7 +42,7 @@ Classification Report:
 
     accuracy                           0.76        99
    macro avg       0.66      0.65      0.66        99
-weighted avg       0.77      0.76      0.76        99
+weighted avg       0.77      0.76      0.76        99\`\`\`</pre>
 
 ![Confusion Matrix of Approach-1](Task-1\Images\Approach-1.png)
 
@@ -51,7 +51,7 @@ The model performs well for emotion-1,3, and 5, and performs very poorly for emo
 
 Approach-2 (One Iteration):
 
-Classification Report:
+<pre>\`\`\`Classification Report:
               precision    recall  f1-score   support
 
            0       0.54      0.50      0.52        14
@@ -65,7 +65,7 @@ Classification Report:
 
     accuracy                           0.72       113
    macro avg       0.62      0.63      0.62       113
-weighted avg       0.72      0.72      0.71       113
+weighted avg       0.72      0.72      0.71       113\`\`\`</pre>
 
 ![Confusion Matrix of Approach-2 with One Iteration](Task-1\Images\Approach-2_One_Itr.png)
 
@@ -76,7 +76,7 @@ emotion, it could be possible that some of them are similar to 'contempt', i.e. 
 
 Approach-2 (100 Iterations)
 
-Classification Report:
+<pre>\`\`\`Classification Report:
               precision    recall  f1-score   support
 
            0       0.53      0.54      0.53        14
@@ -86,7 +86,7 @@ Classification Report:
            4       0.24      0.21      0.23         8
            5       0.96      0.87      0.91        25
            6       0.60      0.53      0.55        14
-           7       0.40      0.55      0.46         5
+           7       0.40      0.55      0.46         5\`\`\`</pre>
 
 Average Accuracy: 0.7462
 ![Confusion Matrix of Approach-2 with One Iteration](Task-1\Images\Approach-2_100_Itr.png)
