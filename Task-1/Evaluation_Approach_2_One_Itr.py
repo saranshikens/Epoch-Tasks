@@ -1,3 +1,6 @@
+# First we will consider a single iteration and afterwards compare the result with  
+# the model using 100 iterations.
+
 import numpy as np
 import pandas as pd
 import joblib

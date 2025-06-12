@@ -1,3 +1,6 @@
+# With Principal Component Analysis on the Unlabelled Data, we will extract the  
+# before mentioned 100 features.
+
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA

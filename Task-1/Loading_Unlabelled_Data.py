@@ -3,6 +3,22 @@ import pandas as pd
 import os
 from PIL import Image
 
+
+# Images have been stored in the "lfw-deepfunneled" folder as follows:  
+# "lfw-deepfunneled" -> Person's Name (Format: {FirstName}_{Surname} ) -> image.jpg  
+# We loop through the folders/directories, searching for .jpg images.  
+# When we encounter an image, we apply the these transformations:  
+
+
+# 1.   Convert the image to grayscale.
+
+# 2.   We want all our images (labelled and unlabelled both) to have the same size.  
+#      Since images in labelled data are 48 $\times$ 48, we resize these encountered images to the same.
+
+# 3.   Currently, the image is a 48 $\times$ 48 matrix. To store the images in a single 2-D dataframe, 
+#      we reshape the 48 $\times$ 48 matrix into a 1 $\times$ 2304 vector.
+
+
 lfw_dir = r"Task-1\Data Sets\lfw-deepfunneled"
 
 image_vectors = [] # we will store each image here, and later use it to make a pandas dataframe for the unlabelled data
@@ -31,5 +47,6 @@ for person_name in os.listdir(lfw_dir): # os.listdir(lfw_dir) returns a list of 
 
 large_data = pd.DataFrame(image_vectors)
 print(large_data.head())
+
 
 large_data.to_csv('large_data.csv', index=False)

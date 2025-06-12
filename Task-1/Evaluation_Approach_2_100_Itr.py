@@ -12,6 +12,8 @@ small_data = pd.read_csv(r'Task-1\small_data.csv')
 scaler = joblib.load(r'Task-1\scaler.pkl')
 
 
+# INITIALIZING THE EVALUATION METRICS
+
 # we will store results from each iteration in these lists and dictionaries
 accuracy_scores = []
 confusion_matrices = []
@@ -25,8 +27,7 @@ f1_scores = {str(i): [] for i in range(7)}
 n_iterations = 100
 
 
-
-
+# RUNNING THE ITERATIONS
 
 
 for i in range(n_iterations):
@@ -102,8 +103,7 @@ for i in range(n_iterations):
         overall_confusion_matrix += confusion_matrix(y_test_2, y_pred_2, labels=np.unique(y_pca_2))
 
 
-
-
+# AVERAGING OUT THE METRICS
 
 
 average_confusion_matrix = overall_confusion_matrix / n_iterations
@@ -114,7 +114,7 @@ average_f1 = {label: np.mean(f1_scores[label]) for label in f1_scores.keys()}
 
 
 
-
+# AVERAGE CLASSIFICATION REPORT
 
 
 print(f"\nAverage Classification Report over {n_iterations} iterations:")
@@ -131,7 +131,7 @@ for label, avg_f1_score in average_f1.items():
 
 
 
-
+# AVERAGE CONFUSION MATRIX
 
 
 display = ConfusionMatrixDisplay(confusion_matrix=average_confusion_matrix, display_labels=np.unique(y_pca_2))
