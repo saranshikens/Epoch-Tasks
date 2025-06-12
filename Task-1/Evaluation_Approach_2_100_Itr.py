@@ -20,9 +20,9 @@ confusion_matrices = []
 
 # since we have to output the metrics for each emotion class, we initialize the keys
 # as the emotions themselves
-precision_scores = {str(i): [] for i in range(7)} 
-recall_scores = {str(i): [] for i in range(7)}
-f1_scores = {str(i): [] for i in range(7)}
+precision_scores = {str(i): [] for i in range(8)} 
+recall_scores = {str(i): [] for i in range(8)}
+f1_scores = {str(i): [] for i in range(8)}
 
 n_iterations = 100
 
