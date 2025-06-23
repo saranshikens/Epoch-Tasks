@@ -18,7 +18,7 @@ df = pd.read_csv(r"Task-2_Streamlit\Files\UpdatedResumeDataSet.csv")
 def clean_resume(resume):
     # Remove '\r' and '\n'
     cleaned_resume = resume.replace('\r', '').replace('\n', ' ')
-    # Remove characters not in the allowed set (alphanumeric and whitespace)
+    # Remove characters that are not allowed
     cleaned_resume = re.sub(r'[^a-zA-Z\s]', '', cleaned_resume)
     return cleaned_resume
 
@@ -35,7 +35,7 @@ def extract_sections(resume_tokens):
     sections = {"Skills": [], "Work Experience": [], "Projects": []}
     current_section = None
     section_keywords = {
-        ("skill", "skills"): "Skills", # we account for both lower case and camel case
+        ("skill", "skills"): "Skills", # we account for lower case as well
         ("experience", "work experience"): "Work Experience",
         ("project", "projects"): "Projects"
     }
@@ -74,7 +74,6 @@ tfidf_vectorizer = TfidfVectorizer(stop_words='english', max_features=5000)
 # Fit and transform the concatenated features
 tfidf_matrix = tfidf_vectorizer.fit_transform(df['Concatenated_Features'])
 
-# Convert to DataFrame for easier inspection (optional)
 tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf_vectorizer.get_feature_names_out())
 
 

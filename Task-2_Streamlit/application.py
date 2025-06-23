@@ -1,8 +1,6 @@
 import streamlit as st
 import prediction
 
-# st.title("Multi-Modal Candidate Shortlisting")
-# st.title("System")
 st.markdown("<h1 style='text-align: center;'>Multi-Modal Candidate Shortlisting</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center;'>System</h1>", unsafe_allow_html=True)
 

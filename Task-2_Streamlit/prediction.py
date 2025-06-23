@@ -28,7 +28,7 @@ class Prediction:
     def clean_resume(resume):
         # Remove '\r' and '\n'
         cleaned_resume = resume.replace('\r', '').replace('\n', ' ')
-        # Remove characters not in the allowed set (alphanumeric and whitespace)
+        # Remove characters that are not allowed
         cleaned_resume = re.sub(r'[^a-zA-Z\s]', '', cleaned_resume)
         return cleaned_resume
 
@@ -64,7 +64,6 @@ class Prediction:
     def tokenization(self, df):
         tfidf_matrix = tfidf_vectorizer.fit_transform(df['Concatenated_Features'])
 
-        # Convert to DataFrame for easier inspection (optional)
         tfidf_df = pd.DataFrame(tfidf_matrix.toarray(), columns=tfidf_vectorizer.get_feature_names_out())
         return tfidf_df
 
@@ -84,13 +83,9 @@ class Prediction:
         df_user['Concatenated_Features'] = df_user['Extracted_Features'].apply(lambda x: ' '.join([' '.join(section) for section in x.values()]))
 
         tfidf_matrix_user = tfidf_vectorizer.transform(df_user['Concatenated_Features'])
-        # tfidf_df_user = pd.DataFrame(tfidf_matrix_user.toarray(), columns=tfidf_vectorizer.get_feature_names_out())
-        # tfidf_df_user = tfidf_df_user.reindex(columns=self.tokenization(df_user).columns, fill_value=0)
-        # Ensure correct feature order
         features_seen = tfidf_vectorizer.get_feature_names_out()
         tfidf_df_user = pd.DataFrame(tfidf_matrix_user.toarray(), columns=features_seen)
 
-        # Reindex to ensure same structure (if any columns missing, they get 0; if extra, they are dropped)
         tfidf_df_user = tfidf_df_user.reindex(columns=features_seen, fill_value=0)
         scaled_tfidf_df_user = scaler.transform(tfidf_df_user)
         tfidf_pca_user = pca.transform(scaled_tfidf_df_user)
